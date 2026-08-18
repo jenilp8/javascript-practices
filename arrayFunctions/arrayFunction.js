@@ -7,6 +7,16 @@ export const products = [
   { id: 6, name: "Smart Watch", price: 69.99, category: "Electronics", stock: 12, rating: 0 }
 ];
 
+
+const users = [
+  { id: 1, name: "Asha", age: 29, role: "admin", active: true, country: "IN", verified: true },
+  { id: 2, name: "Ravi", age: 17, role: "member", active: false, country: "IN", verified: false },
+  { id: 3, name: "Meera", age: 34, role: "editor", active: true, country: "US", verified: true },
+  { id: 4, name: "Kabir", age: 22, role: "member", active: true, country: "UK", verified: false },
+  { id: 5, name: "Sara", age: 41, role: "admin", active: false, country: "US", verified: true }
+];
+
+
 export function convertToStars(rating) {
     if (rating >= 1 && rating <= 1.9) {
         return "★";
@@ -20,5 +30,16 @@ export function convertToStars(rating) {
         return "★★★★★";
     } else {
         return "";
+    }
+}
+
+
+export function checkStockStatus(stock) {
+    if(stock == 0) {
+        return "Out Of Stock";
+    } else if(stock < 15) {
+        return "Low Stock";
+    } else {
+        return "In Stock";
     }
 }

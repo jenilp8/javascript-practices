@@ -1,5 +1,5 @@
-import { products } from "../arrayFunction.js";
-import { convertToStars } from "../arrayFunction.js";
+import { products, convertToStars, checkStockStatus } from "../arrayFunction.js";
+
 
 // Return an array of just the product name's.
 
@@ -86,3 +86,12 @@ const dropDownParameter = products.map((product) => {
 });
 
 console.log(dropDownParameter);
+
+
+// Return each product with a stockStatus field: "Out of Stock", "Low Stock" (<15), or "In Stock".
+
+const stockStatusProduct = products.map((product) => {
+    return ({...product, stockStatus : checkStockStatus(product.stock)});
+})
+
+console.log(stockStatusProduct);
