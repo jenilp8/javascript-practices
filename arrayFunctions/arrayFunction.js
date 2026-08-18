@@ -8,12 +8,21 @@ export const products = [
 ];
 
 
-const users = [
+export const users = [
   { id: 1, name: "Asha", age: 29, role: "admin", active: true, country: "IN", verified: true },
   { id: 2, name: "Ravi", age: 17, role: "member", active: false, country: "IN", verified: false },
   { id: 3, name: "Meera", age: 34, role: "editor", active: true, country: "US", verified: true },
   { id: 4, name: "Kabir", age: 22, role: "member", active: true, country: "UK", verified: false },
   { id: 5, name: "Sara", age: 41, role: "admin", active: false, country: "US", verified: true }
+];
+
+
+export const transactions = [
+  { id: 1, type: "credit", amount: 500, category: "salary", date: "2026-01-05" },
+  { id: 2, type: "debit", amount: 45.5, category: "groceries", date: "2026-01-07" },
+  { id: 3, type: "debit", amount: 120, category: "utilities", date: "2026-01-10" },
+  { id: 4, type: "credit", amount: 80, category: "refund", date: "2026-01-12" },
+  { id: 5, type: "debit", amount: 30, category: "groceries", date: "2026-01-15" }
 ];
 
 
@@ -41,5 +50,27 @@ export function checkStockStatus(stock) {
         return "Low Stock";
     } else {
         return "In Stock";
+    }
+}
+
+export function checkAge(age) {
+    if(age < 18) {
+        return true;
+    }
+}
+export function checkForeignCountry(country) {
+    if(country === "IN") {
+        return false;
+    } else if(country === "US") {
+        return true;
+    } else if(country === "UK") {
+        return true;
+    }
+}
+
+export function checkVowelName(name) {
+    const firstChar = name.toLowerCase().charAt(0);
+    if(firstChar === 'a' || firstChar === 'e' || firstChar === 'i' || firstChar === 'o' || firstChar === 'u') {
+        return true;
     }
 }
